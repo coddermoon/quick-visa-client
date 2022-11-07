@@ -1,13 +1,13 @@
 import { initializeApp } from 'firebase/app'
 
 const firebaseConfig = {
-    apiKeyREACT_APP_apiKey,
-    authDomainREACT_APP_authDomain,
-    projectIdREACT_APP_projectId,
-    storageBucketREACT_APP_storageBucket,
-    messagingSenderIdREACT_APP_messagingSenderId,
-    appIdREACT_APP_appId,
-  };
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
+};
 
   const app = initializeApp(firebaseConfig);
 
