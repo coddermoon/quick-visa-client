@@ -1,6 +1,8 @@
 import { Avatar, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Assets/contexts/AuthProvider';
 
@@ -18,10 +20,12 @@ const handleLogin = (e)=>{
 
   loginWithEmail(email,password)
   .then(result=>{
-    console.log(result)
+    const user = result.user
+    console.log(user)
+   toast.success('login successfull')
   })
   .catch(err=>{
-    console.error(err.message)
+   toast.error(err.message.slice(22,-2))
   })
 }
 

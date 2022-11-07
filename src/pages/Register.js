@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Assets/contexts/AuthProvider";
 
@@ -30,7 +31,7 @@ const Register = () => {
       user.displayName = name
      
     })
-.catch(err=>console.error(err.messsage))
+.catch(err=>toast.error(err.message.slice(22,-2)))
 
   };
 
