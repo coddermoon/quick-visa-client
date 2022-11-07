@@ -1,10 +1,30 @@
 import { Avatar, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../Assets/contexts/AuthProvider';
 
 
 const Login = () => {
+  const {loginWithEmail}= useContext(AuthContext)
+ 
+
+const handleLogin = (e)=>{
+  e.preventDefault()
+  const form = e.target
+ 
+  const email = form.email.value
+  const password = form.password.value
+
+  loginWithEmail(email,password)
+  .then(result=>{
+    console.log(result)
+  })
+  .catch(err=>{
+    console.error(err.message)
+  })
+}
+
     return (
         <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -22,7 +42,7 @@ const Login = () => {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate  sx={{ mt: 3 }}>
+          <Box component="form" onSubmit={handleLogin} noValidate  sx={{ mt: 3 }}>
             <Grid container spacing={2}>
              
               
