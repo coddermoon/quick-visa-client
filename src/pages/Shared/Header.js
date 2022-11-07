@@ -1,8 +1,21 @@
-import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+
+import React, { useContext } from 'react';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Assets/contexts/AuthProvider';
 
 const Header = () => {
+  const {user,logout}= useContext(AuthContext)
+
+  const handleLogout=()=>{
+    logout()
+    .then(()=>{
+      toast.success("logout successfull")
+  })
+  .catch(err=>toast.error(err.message.slice(22,-2)))
+  
+  }
   
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -21,8 +34,12 @@ const Header = () => {
           </Nav>
           <Nav>
            
+        { user?.uid ?
+         <Button className='btn btn-primary' onClick={handleLogout}>Logout</Button>
+          :
           <NavLink className='btn btn-primary mx-2' to='/login'>login</NavLink>
-        <NavLink className='btn btn-primary' to='/signup'>signup</NavLink>
+       
+        }
           
           </Nav>
         </Navbar.Collapse>
