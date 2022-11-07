@@ -1,9 +1,14 @@
 import { Avatar, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../Assets/contexts/AuthProvider';
 
 const Register = () => {
+  const {createUserWithEmail}= useContext(AuthContext)
+ 
+
+ 
     return (
         <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -82,7 +87,7 @@ const Register = () => {
           </Button>
           <Grid container justifyContent="center">
             <Grid item>
-              <NavLink className='color-[#fff]'  to='/login' variant="body2" textAlign='center' display='inline-block'>
+              <NavLink   to='/login' variant="body2"  display='inline-block'>
                 Already have an account? Sign in
               </NavLink>
             </Grid>

@@ -66,7 +66,7 @@ const Login = () => {
               <Grid item>
                 
               <div className='text-center'>
-              <NavLink  to='/signup'variant="body2" textAlign='center'>
+              <NavLink  to='/signup'variant="body2">
                   New User? Sign up now
                 </NavLink>
               </div>
