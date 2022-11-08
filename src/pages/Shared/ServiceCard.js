@@ -7,7 +7,7 @@ const ServiceCard = ({service}) => {
    const {title,description,thubm_img}= service
     return (
         <Col md="4">
-        <Card>
+        <Card className='my-3'>
           <CardActionArea>
             <CardMedia
               component="img"

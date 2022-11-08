@@ -9,9 +9,10 @@ import ServiceCard from "../Shared/ServiceCard";
 
 
 const Services = () => {
+    const limit = 3
     const [services,setServices]=useState([])
     useEffect(()=>{
-        fetch(`https://service-review-server-woad.vercel.app/services`)
+        fetch(`https://service-review-server-woad.vercel.app/services?limit=${limit}`)
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[])
