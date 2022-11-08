@@ -4,7 +4,7 @@ import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({service}) => {
-   const {title,description,thubm_img}= service
+   const {title,description,thubm_img,_id}= service
     return (
         <Col md="4">
         <Card className='my-3'>
@@ -20,7 +20,7 @@ const ServiceCard = ({service}) => {
                 {title}
               </Typography>
               <Typography variant="body2" color="text.secondary"  sx={{ lineHeight: 2 ,fontSize:"18px"}}>
-               {description.slice(0,100)}... <Link className='m-3 ' to='/details' size="small">see details</Link>
+               {description.slice(0,100)}... <Link className='m-3 ' to={`/service/${_id}`} size="small">see details</Link>
               </Typography>
             </CardContent>
            

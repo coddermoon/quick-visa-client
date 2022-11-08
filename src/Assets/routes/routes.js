@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../../App";
+import DetailsReview from "../../pages/DetailsReview";
 import Home from "../../pages/Home/Home";
 
 import Login from "../../pages/Login";
@@ -22,7 +23,15 @@ const routes = createBrowserRouter([
             path:'/services',
             loader:()=> fetch(`https://service-review-server-woad.vercel.app/services`),
             element:<ServicePage/>
-        },{
+        },
+        
+        {
+            path:'/service/:id',
+            loader:({params})=> fetch(`https://service-review-server-woad.vercel.app/service/${params.id}`),
+            element:<DetailsReview/>
+        },
+        
+        {
             path:'/login',
             element:<Login/>
         },{

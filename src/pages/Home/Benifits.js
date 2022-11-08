@@ -12,7 +12,7 @@ const Benifits = () => {
   const [benifits, setBenifits] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/benifits")
+    fetch("https://service-review-server-woad.vercel.app/benifits")
       .then((res) => res.json())
       .then((data) => setBenifits(data));
   }, []);

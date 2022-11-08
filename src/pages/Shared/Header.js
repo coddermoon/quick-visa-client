@@ -21,7 +21,7 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand>
-          <Link to='/' className='text-light'>logo</Link>
+          <Link to='/' className='text-light'>Quick Visa Consultancy</Link>
 
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
