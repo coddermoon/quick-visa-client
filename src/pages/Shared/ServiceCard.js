@@ -1,0 +1,35 @@
+import { CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import React from 'react';
+import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+const ServiceCard = ({service}) => {
+   const {title,description,thubm_img}= service
+    return (
+        <Col md="4">
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="300"
+              image={thubm_img}
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary"  sx={{ lineHeight: 2 ,fontSize:"18px"}}>
+               {description.slice(0,100)}... <Link className='m-3 ' to='/details' size="small">see details</Link>
+              </Typography>
+            </CardContent>
+           
+              
+            </CardActionArea>
+          
+        </Card>
+      </Col>
+    );
+};
+
+export default ServiceCard;
