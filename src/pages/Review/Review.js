@@ -11,7 +11,7 @@ const Review = () => {
             <hr />
 
         </div>
-        <Row>
+        <Row  className='sticky-top'>
             <Col md='8'>
                 <ReviewCard/>
             </Col>

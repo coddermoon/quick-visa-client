@@ -1,6 +1,7 @@
 import { CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({service}) => {
@@ -9,12 +10,18 @@ const ServiceCard = ({service}) => {
         <Col md="4">
         <Card className='my-3'>
           <CardActionArea>
-            <CardMedia
+            <PhotoProvider>
+<PhotoView src={thubm_img}>
+<CardMedia
               component="img"
               height="300"
               image={thubm_img}
               alt="green iguana"
             />
+</PhotoView>
+
+            </PhotoProvider>
+           
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {title}

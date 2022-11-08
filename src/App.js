@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
 import Footer from './pages/Shared/Footer';
 import Header from './pages/Shared/Header';
+import 'react-photo-view/dist/react-photo-view.css';
 import './Assets/styles/App.css';
 
 function App() {

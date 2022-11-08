@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import Review from './Review';
 
@@ -11,7 +12,12 @@ const DetailsReview = () => {
         <Container>
             <Row className='my-5 '>
             <Col md='7'>
-            <img className='img-fluid' src={thubm_img} alt="" />
+              <PhotoProvider>
+                <PhotoView src={thubm_img}>
+                <img className='img-fluid' src={thubm_img} alt="" />
+                </PhotoView>
+              </PhotoProvider>
+           
 
             </Col>
 

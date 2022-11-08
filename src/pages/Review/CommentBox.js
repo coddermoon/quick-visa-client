@@ -1,8 +1,20 @@
 
 import { Button, Grid, Paper, TextField } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Assets/contexts/AuthProvider";
 
 const CommentBox = () => {
+    const {user}= useContext(AuthContext)
+ 
+
+    const handleComment=(e)=>{
+e.preventDefault()
+const review = e.target.comment.value
+const email = user.email
+console.log(review,email)
+
+    }
+
   return (
     <div  style={{ padding: 10 }} className="App">
 
@@ -10,17 +22,17 @@ const CommentBox = () => {
      
       <Paper className="my-5" style={{ padding: "20px 20px" }}>
         
-      <form >
+      <form  onSubmit={handleComment}>
 
 
       <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  id="email"
+                  id="text"
                   label="Comment"
                   name="comment"
-                  autoComplete="email"
+                  autoComplete="text"
                   aria-label="minimum height"
                 />
               </Grid>
