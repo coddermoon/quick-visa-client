@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
+import Review from './Review';
 
 const DetailsReview = () => {
     const data = useLoaderData()
@@ -30,7 +31,9 @@ const DetailsReview = () => {
       </div>
             </Col>
             </Row>
-          
+            <hr />
+          {/* review page section */}
+          <Review/>
         
         </Container>
     );
