@@ -7,7 +7,7 @@ import Review from './Review';
 
 const DetailsReview = () => {
     const data = useLoaderData()
-   const {title,description,thubm_img}=data
+   const {title,description,thubm_img,_id}=data
     return (
         <Container>
             <Row className='my-5 '>
@@ -39,7 +39,10 @@ const DetailsReview = () => {
             </Row>
             <hr />
           {/* review page section */}
-          <Review/>
+          <Review
+          id={_id}
+          key={_id}
+          />
         
         </Container>
     );

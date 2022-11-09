@@ -2,15 +2,16 @@ import React from 'react';
 import { Avatar, Divider, Grid, Paper } from "@mui/material";
 
 const ReviewCard = ({comment}) => {
+ 
   
-  const {commentSingle,name}=comment
+  const {commentSingle,name,photo}=comment
     return (
         <div >
-      <h1 >Comments</h1>
+     
       <Paper className='my-5' style={{ padding: "20px 20px" }}>
         <Grid container wrap="nowrap" spacing={2}>
           <Grid item>
-            <Avatar alt="Remy Sharp" src="" />
+            <Avatar alt="Remy Sharp" src={photo ? photo:""}  />
           </Grid>
           <Grid justifyContent="left" item xs zeroMinWidth>
             <h4 style={{ margin: 0, textAlign: "left" }}>{name}</h4>
