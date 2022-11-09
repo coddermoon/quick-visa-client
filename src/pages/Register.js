@@ -16,7 +16,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Assets/contexts/AuthProvider";
 
 const Register = () => {
-  const { createUserWithEmail } = useContext(AuthContext);
+  const { createUserWithEmail,updateUserProfile } = useContext(AuthContext);
 
   const handleSignupWithEmail = (e) => {
     e.preventDefault();
@@ -27,11 +27,25 @@ const Register = () => {
    
     createUserWithEmail(email,password)
     .then(result=>{
-      const user = result.user
-      user.displayName = name
+      
+      
+      handleUpdateUserProfile(name);
      
     })
 .catch(err=>toast.error(err.message.slice(22,-2)))
+
+// user update
+
+const handleUpdateUserProfile = (name) => {
+  const profile = {
+      displayName: name,
+     
+  }
+
+  updateUserProfile(profile)
+      .then(() => { })
+      .catch(error => console.error(error));
+}
 
   };
 

@@ -1,19 +1,11 @@
 
 import { Button, Grid, Paper, TextField } from "@mui/material";
-import React, { useContext } from "react";
-import { AuthContext } from "../../Assets/contexts/AuthProvider";
 
-const CommentBox = () => {
-    const {user}= useContext(AuthContext)
+
+const CommentBox = ({handleComment}) => {
+   
  
 
-    const handleComment=(e)=>{
-e.preventDefault()
-const review = e.target.comment.value
-const email = user.email
-console.log(review,email)
-
-    }
 
   return (
     <div  style={{ padding: 10 }} className="App">
