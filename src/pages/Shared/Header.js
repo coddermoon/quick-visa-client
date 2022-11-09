@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import logo from '../../Assets/images/apple-touch-icon.png'
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Assets/contexts/AuthProvider';
 
@@ -21,7 +22,9 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand>
-          <Link to='/' className='text-light'>Quick Visa Consultancy</Link>
+          <Link to='/' className='text-light'>
+            <img className='me-3' style={{height:'40px'}} src={logo} alt="" />
+             Quick Visa Consultancy</Link>
 
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
