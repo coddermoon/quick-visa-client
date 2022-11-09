@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container} from 'react-bootstrap';
 import { useLoaderData } from "react-router-dom";
-import Spin from '../Shared/Spin';
+
 
 const Blogs = () => {
     const blogs = useLoaderData();
@@ -10,7 +10,7 @@ const Blogs = () => {
          
             <h1 className="text-center my-5">Some Question</h1>
 
-            <Spin/>
+         
 
             {blogs.map((blog) => (
           <>

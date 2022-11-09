@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../Firebase/firebase.config';
+import Spin from '../../pages/Shared/Spin';
 
 
 const auth = getAuth(app)
@@ -60,6 +61,9 @@ useEffect(() => {
 
 }, [])
 
+if(loading){
+    return  <Spin/>
+}
 
     const authInfo = {createUserWithEmail,loginWithEmail,loading,user,logout,updateUserProfile,socialSignin,setLoading}
     return (

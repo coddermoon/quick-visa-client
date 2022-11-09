@@ -16,7 +16,7 @@ const Benifits = () => {
       .then((res) => res.json())
       .then((data) => setBenifits(data));
   }, []);
-
+console.log(benifits)
   return (
     <Container>
       <h2 className="text-center my-5">Why Choose Me</h2>
