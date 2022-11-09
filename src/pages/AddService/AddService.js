@@ -18,7 +18,7 @@ const AddService = () => {
         const data = {
             title,price,description,thubm_img
         }
-        fetch(`http://localhost:5000/services`, {
+        fetch(` https://service-review-server-woad.vercel.app/services`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -30,6 +30,7 @@ const AddService = () => {
             
             {
               if(data.acknowledged){
+                console.log(data)
                   toast.success('User added successfully');
                  
               }
