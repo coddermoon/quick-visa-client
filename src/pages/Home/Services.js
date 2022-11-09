@@ -2,17 +2,18 @@ import {
   Button,
  
 } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Assets/contexts/AuthProvider";
+
 import ServiceCard from "../Shared/ServiceCard";
-import Spin from "../Shared/Spin";
+
 
 
 const Services = () => {
 
 
+ 
 
 
     const limit = 3
@@ -23,6 +24,9 @@ const Services = () => {
         .then(data=>setServices(data))
         
     },[])
+
+   
+  
   return (
     <Container>
       <h2 className="text-center my-5">what you will get from here</h2>
