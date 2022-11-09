@@ -1,4 +1,4 @@
-import { Avatar, Divider, Grid, Paper } from '@mui/material';
+import { Avatar, Button, Divider, Grid, Paper } from '@mui/material';
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
@@ -23,7 +23,12 @@ const UserReview = () => {
              posted 1 minute ago
            </p>
          </Grid>
+         <div className='me-5 d-flex flex-direction-column align-items-center' >
+       <Button className='mx-2' variant="contained">delete  </Button>
+<Button className='mx-2' variant="outlined">update</Button>
+       </div >
        </Grid>
+      
        <Divider variant="fullWidth" style={{ margin: "5px 5px" }} />
        
      </Paper>
