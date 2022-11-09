@@ -5,6 +5,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Assets/contexts/AuthProvider';
+import SocialLogin from './Shared/SocialLogin';
 
 
 const Login = () => {
@@ -98,6 +99,7 @@ const handleLogin = (e)=>{
               </Grid>
             </Grid>
           </Box>
+          <SocialLogin/>
         </Box>
         
       </Container>

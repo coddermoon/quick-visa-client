@@ -14,6 +14,7 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Assets/contexts/AuthProvider";
+import SocialLogin from "./Shared/SocialLogin";
 
 const Register = () => {
   const { createUserWithEmail,updateUserProfile } = useContext(AuthContext);
@@ -140,6 +141,7 @@ const handleUpdateUserProfile = (name) => {
             </Grid>
           </Box>
 
+<SocialLogin/>
 
         </Box>
       </Container>
