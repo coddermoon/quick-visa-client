@@ -21,7 +21,7 @@ const Review = ({ id }) => {
       id,
       photo,
     };
-    const totalComment = [...comment, review];
+    
 
     fetch(`http://localhost:5000/review`, {
       method: 'POST',
@@ -40,7 +40,7 @@ const Review = ({ id }) => {
         }
     })
     
-
+    const totalComment = [...comment, review];
     setComment(totalComment);
   };
 
@@ -48,6 +48,7 @@ const Review = ({ id }) => {
     fetch(`http://localhost:5000/review?id=${id}`)
       .then((res) => res.json())
       .then((data) => setComment(data));
+      
   }, [id]);
 
 
