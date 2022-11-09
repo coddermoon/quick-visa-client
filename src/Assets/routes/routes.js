@@ -8,6 +8,7 @@ import Login from "../../pages/Login";
 import NotFound from "../../pages/NotFound";
 import Register from "../../pages/Register";
 import ServicePage from "../../pages/Services/ServicePage";
+import UserReview from "../../pages/UserReview/UserReview";
 
 
 const routes = createBrowserRouter([
@@ -34,6 +35,9 @@ const routes = createBrowserRouter([
         {
             path:'/login',
             element:<Login/>
+        },{
+            path:'/reviews',
+            element:<UserReview/>
         },{
             path:'/signup',
             element:<Register/>

@@ -43,7 +43,7 @@ const Review = ({ id }) => {
 
     setComment(totalComment);
   };
-console.log(id)
+
   useEffect(() => {
     fetch(`http://localhost:5000/review?id=${id}`)
       .then((res) => res.json())
