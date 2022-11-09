@@ -61,7 +61,7 @@ useEffect(() => {
 }, [])
 
 
-    const authInfo = {createUserWithEmail,loginWithEmail,loading,user,logout,updateUserProfile,socialSignin}
+    const authInfo = {createUserWithEmail,loginWithEmail,loading,user,logout,updateUserProfile,socialSignin,setLoading}
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

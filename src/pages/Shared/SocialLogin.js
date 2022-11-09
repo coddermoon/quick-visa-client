@@ -1,11 +1,15 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import {useNavigate,useLocation} from 'react-router-dom'
 import { FaGithub, FaGoogle, } from 'react-icons/fa';
 import { AuthContext } from '../../Assets/contexts/AuthProvider';
 
 const SocialLogin = () => {
-    const {socialSignin} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const {socialSignin,setLoading} = useContext(AuthContext)
    const googleProvider = new GoogleAuthProvider()
    const githubProvider = new GithubAuthProvider()
 
@@ -13,8 +17,12 @@ const SocialLogin = () => {
         socialSignin(provider)
         .then(result=>{
             toast.success("login successfull")
+            navigate(from, {replace: true});
         })
         .catch(err=>toast.errror(err.message))
+        .finally(() => {
+            setLoading(false);
+        })
 
 
     }

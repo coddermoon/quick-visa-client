@@ -12,12 +12,16 @@ import {
 import { Box } from "@mui/system";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
-import { NavLink } from "react-router-dom";
+import { NavLink,useLocation,useNavigate } from "react-router-dom";
 import { AuthContext } from "../Assets/contexts/AuthProvider";
 import SocialLogin from "./Shared/SocialLogin";
 
 const Register = () => {
-  const { createUserWithEmail,updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+  const { createUserWithEmail,updateUserProfile,setLoading } = useContext(AuthContext);
 
   const handleSignupWithEmail = (e) => {
     e.preventDefault();
@@ -31,9 +35,13 @@ const Register = () => {
       
       
       handleUpdateUserProfile(name);
+      navigate(from, {replace: true});
      
     })
 .catch(err=>toast.error(err.message.slice(22,-2)))
+.finally(() => {
+  setLoading(false);
+})
 
 // user update
 

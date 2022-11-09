@@ -3,13 +3,17 @@ import { Box } from '@mui/system';
 
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useNavigate,useLocation } from 'react-router-dom';
 import { AuthContext } from '../Assets/contexts/AuthProvider';
 import SocialLogin from './Shared/SocialLogin';
 
 
 const Login = () => {
-  const {loginWithEmail}= useContext(AuthContext)
+  const {loginWithEmail,setLoading}= useContext(AuthContext)
+  const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
  
 
 const handleLogin = (e)=>{
@@ -24,10 +28,15 @@ const handleLogin = (e)=>{
     const user = result.user
     console.log(user)
    toast.success('login successfull')
+   form.reset()
+   navigate(from, {replace: true});
   })
   .catch(err=>{
    toast.error(err.message.slice(22,-2))
   })
+  .finally(() => {
+    setLoading(false);
+})
 }
 
     return (

@@ -9,6 +9,7 @@ import NotFound from "../../pages/NotFound";
 import Register from "../../pages/Register";
 import ServicePage from "../../pages/Services/ServicePage";
 import UserReview from "../../pages/UserReview/UserReview";
+import Blogs from "../../pages/Blogs/Blogs";
 
 
 const routes = createBrowserRouter([
@@ -30,6 +31,12 @@ const routes = createBrowserRouter([
             path:'/service/:id',
             loader:({params})=> fetch(`https://service-review-server-woad.vercel.app/service/${params.id}`),
             element:<DetailsReview/>
+        },
+        {
+
+            path:'/blogs',
+            loader:()=> fetch('https://service-review-server-woad.vercel.app/blogs'),
+            element:<Blogs/>
         },
         
         {
