@@ -29,6 +29,7 @@ const Header = () => {
           <Nav className="mx-auto">
            <NavLink className='mx-2 fw-semibold text-light' to='/services'>services</NavLink>
            <NavLink className='mx-2 fw-semibold text-light' to='/reviews'>Reviews</NavLink>
+           <NavLink className='mx-2 fw-semibold text-light' to='/add'>Add Service</NavLink>
           <NavLink  className='mx-2 fw-semibold text-light' to='/blogs'>Blogs</NavLink>
             
            
