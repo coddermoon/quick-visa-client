@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import UseTitle from '../../Assets/Hooks/UseTitle';
 import ServiceCard from '../Shared/ServiceCard';
 
 const ServicePage = () => {
+    UseTitle('Services')
     const services = useLoaderData()
     console.log(services)
     return (
