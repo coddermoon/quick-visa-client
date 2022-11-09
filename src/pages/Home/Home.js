@@ -1,5 +1,6 @@
 import React from 'react';
 import UseTitle from '../../Assets/Hooks/UseTitle';
+import Contact from '../Shared/Contact';
 import Benifits from './Benifits';
 import Services from './Services';
 
@@ -13,6 +14,7 @@ const Home = () => {
                 <Slider/>
                 <Benifits/>
                 <Services/>
+                <Contact/>
                 
         </div>
     );
