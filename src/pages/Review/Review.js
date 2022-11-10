@@ -52,11 +52,13 @@ const Review = ({ id }) => {
   };
 
   useEffect(() => {
-    fetch(`https://service-review-server-woad.vercel.app/review?id=${id}`,{
+    fetch(`https://service-review-server-woad.vercel.app/review?id=${id}`,
+    {
       headers: {
         authorization: `Bearer ${localStorage.getItem('service-token')}`
     }
-    })
+    }
+    )
       .then((res) => res.json())
       .then((data) => setComment(data));
       
