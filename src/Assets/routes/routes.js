@@ -12,6 +12,7 @@ import UserReview from "../../pages/UserReview/UserReview";
 import Blogs from "../../pages/Blogs/Blogs";
 import PrivateRoutes from "./PrivetRoutes";
 import AddService from "../../pages/AddService/AddService";
+import UpdateReview from "../../pages/Review/UpdateReview";
 
 
 const routes = createBrowserRouter([
@@ -27,6 +28,11 @@ const routes = createBrowserRouter([
             path:'/services',
             loader:()=> fetch(`https://service-review-server-woad.vercel.app/services`),
             element:<ServicePage/>
+        },
+        {
+            path:'/update/:id',
+            loader:({params})=> fetch(`http://localhost:5000/update/${params.id}`),
+            element: <UpdateReview/>
         },
         
         {
@@ -44,6 +50,7 @@ const routes = createBrowserRouter([
             loader:()=> fetch('https://service-review-server-woad.vercel.app/blogs'),
             element:<Blogs/>
         },
+
         
         {
             path:'/login',

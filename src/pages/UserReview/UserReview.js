@@ -1,10 +1,10 @@
-import { Avatar, Button, Divider, Grid, Paper } from '@mui/material';
+import { Avatar, Button, Divider, Grid,  Paper } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import StarRatings from 'react-star-ratings';
 import { AuthContext } from '../../Assets/contexts/AuthProvider';
-
+import {NavLink} from 'react-router-dom'
 const UserReview = () => {
 
   const [myReview,setMyReview]= useState([])
@@ -35,7 +35,11 @@ const handleDelete = id =>{
           }
       })
   }
+
+ 
+
 }
+
 
 
     return (
@@ -69,7 +73,7 @@ const handleDelete = id =>{
     </Grid>
     <div className='me-5 d-flex flex-direction-column align-items-center' >
   <Button onClick={()=>handleDelete(mr._id)} className='mx-2' variant="contained">delete  </Button>
-<Button className='mx-2' variant="outlined">update</Button>
+<NavLink to={`/update/${mr._id}`} className='mx-2' variant="outlined">update</NavLink>
   </div >
   </Grid>
  
