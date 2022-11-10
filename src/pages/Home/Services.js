@@ -2,9 +2,10 @@ import {
   Button,
  
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 
 import ServiceCard from "../Shared/ServiceCard";
 
@@ -21,7 +22,11 @@ const Services = () => {
     useEffect(()=>{
         fetch(`https://service-review-server-woad.vercel.app/services?limit=${limit}`)
         .then(res=>res.json())
-        .then(data=>setServices(data))
+        .then(data=>{
+          
+          setServices(data)
+        
+        })
         
     },[])
 
