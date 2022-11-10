@@ -23,7 +23,15 @@ const Services = () => {
     const [services,setServices]=useState([])
     useEffect(()=>{
      
-        fetch(`https://service-review-server-woad.vercel.app/services?limit=${limit}`)
+        fetch(`https://service-review-server-woad.vercel.app/services?limit=${limit}`,{
+
+          
+            headers: {
+              authorization: `Bearer ${localStorage.getItem('service-token')}`
+          
+          }
+
+        })
         .then(res=>res.json())
         .then(data=>{
           

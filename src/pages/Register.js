@@ -35,9 +35,37 @@ const Register = () => {
     createUserWithEmail(email,password)
     .then(result=>{
       
+      const user = result.user
       
-      handleUpdateUserProfile(name);
-      navigate(from, {replace: true});
+  
+      const currentUser = {
+        email: user.email
+    }
+
+    // jwt code
+
+    fetch('https://service-review-server-woad.vercel.app/jwt', {
+    method: 'POST',
+    headers: {
+        'content-type': 'application/json'
+    },
+    body: JSON.stringify(currentUser)
+})
+    .then(res => res.json())
+    .then(data => {
+     
+        // local storage is the easiest but not the best place to store jwt token
+        localStorage.setItem('service-token', data.token);
+        handleUpdateUserProfile(name);
+        navigate(from, { replace: true });
+    });
+
+    
+
+
+
+      
+      
      
     })
 .catch(err=>toast.error(err.message.slice(22,-2)))
