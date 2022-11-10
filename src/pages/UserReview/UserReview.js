@@ -7,7 +7,7 @@ import { AuthContext } from '../../Assets/contexts/AuthProvider';
 import {NavLink} from 'react-router-dom'
 const UserReview = () => {
 
-  const [myReview,setMyReview]= useState([])
+  const [myReview,setMyReview]= useState(null)
   const {user}= useContext(AuthContext)
   const uid = user?.uid
 
@@ -38,6 +38,10 @@ const handleDelete = id =>{
 
  
 
+}
+
+if(myReview===null){
+  return <h2 className='text-center'>no data found</h2>
 }
 
 
