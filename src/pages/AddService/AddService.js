@@ -1,9 +1,12 @@
 import { Button, Card, CardContent, Grid, TextField, Typography } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../Assets/contexts/AuthProvider';
 
 const AddService = () => {
+
+    const {setLoading}= useContext(AuthContext)
     
 
     const handleSubmit=(e)=>{
@@ -18,6 +21,7 @@ const AddService = () => {
         const data = {
             title,price,description,thubm_img
         }
+        setLoading(true)
         fetch(` https://service-review-server-woad.vercel.app/services`, {
             method: 'POST',
             headers: {
@@ -30,7 +34,7 @@ const AddService = () => {
             
             {
               if(data.acknowledged){
-                console.log(data)
+                setLoading(false)
                   toast.success('User added successfully');
                  
               }
