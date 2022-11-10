@@ -12,7 +12,7 @@ const UserReview = () => {
   const uid = user?.uid
 
   useEffect(()=>()=>{
-fetch(`http://localhost:5000/review?uid=${uid}`)
+fetch(`https://service-review-server-woad.vercel.app/review?uid=${uid}`)
 .then(res=>res.json())
 .then(data=>setMyReview(data))
 },[uid])
@@ -22,7 +22,7 @@ fetch(`http://localhost:5000/review?uid=${uid}`)
 const handleDelete = id =>{
   const proceed = window.confirm('Are you sure, you want to cancel this order');
   if(proceed){
-      fetch(`http://localhost:5000/review/${id}`, {
+      fetch(`https://service-review-server-woad.vercel.app/review/${id}`, {
           method: 'DELETE'
       })
       .then(res => res.json())

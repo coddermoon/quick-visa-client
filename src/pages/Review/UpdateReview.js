@@ -29,7 +29,7 @@ const UpdateReview = () => {
           photo,
           ratings
         };
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://service-review-server-woad.vercel.app/update/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

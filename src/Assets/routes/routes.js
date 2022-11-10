@@ -31,7 +31,7 @@ const routes = createBrowserRouter([
         },
         {
             path:'/update/:id',
-            loader:({params})=> fetch(`http://localhost:5000/update/${params.id}`),
+            loader:({params})=> fetch(`https://service-review-server-woad.vercel.app/update/${params.id}`),
             element: <UpdateReview/>
         },
         
