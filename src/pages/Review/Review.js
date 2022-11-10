@@ -67,10 +67,29 @@ const Review = ({ id }) => {
           <h1>Comments</h1>
 
           {
-    comment.map(cm=><ReviewCard 
-          key={cm._id}
-        comment={cm}
-        />)
+ 
+
+
+    comment.map(cm=> {
+     
+      if (cm) {
+        return <ReviewCard 
+        key={cm._id}
+      comment={cm}
+      />
+      }
+
+     
+     else{
+
+      return <h2>no data found</h2>
+
+    
+     }
+        
+       
+        
+        })
 }
         </Col>
         <Col md="4">
