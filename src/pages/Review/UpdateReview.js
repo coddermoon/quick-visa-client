@@ -1,13 +1,15 @@
 import { Button, Grid, Paper, TextField } from '@mui/material';
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import {  Container } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 import {useLoaderData} from 'react-router-dom'
 import { AuthContext } from '../../Assets/contexts/AuthProvider';
 
 const UpdateReview = () => {
-    const [comment, setComment] = useState([]);
-    const { user } = useContext(AuthContext);
     const data = useLoaderData()
+    
+    const { user } = useContext(AuthContext);
+   
     console.log(data)
     const handleComment = (e)=>{
         e.preventDefault();
@@ -27,6 +29,22 @@ const UpdateReview = () => {
           photo,
           ratings
         };
+        fetch(`http://localhost:5000/update/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.modifiedCount > 0){
+                toast.success('review updated')
+               
+            }
+            
+        })
+        .catch(err=>toast.error(err.message))
     }
     
     return (
@@ -43,11 +61,11 @@ const UpdateReview = () => {
 <Grid item xs={12}>
 <Grid item xs={12}>
            <TextField className="mb-5" label="Rating" type='number' name='ratings' min='1' max='5'  placeholder="give rating with 1 to 5 star"
-           value={data.ratings}
+           defaultValue={data.ratings}
            variant="outlined" fullWidth required />
          </Grid>
          <TextField
-         value={data.commentSingle}
+         defaultValue={data.commentSingle}
            required
            multiline rows={4}
            fullWidth
