@@ -14,8 +14,8 @@ const Slider = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3 className='text-dark fw-bold d-1'>SKILLED & BUSINESS IMMIGRATION</h3>
-            <p className='text-dark'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h2 className='text-dark fw-bold d-1'>SKILLED & BUSINESS IMMIGRATION</h2>
+            <p className='text-dark'>We Provide Clear Advice For Your Migration To Canada, Australia, USA</p>
             <button className='btn btn-primary'>get Started</button>
           </Carousel.Caption>
         </Carousel.Item>
@@ -27,7 +27,7 @@ const Slider = () => {
           />
   
           <Carousel.Caption>
-            <h3>Second slide label</h3>
+            <h2>CHOOSE YOUR DESTINATION!</h2>
             <p className='text-dark'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -39,7 +39,7 @@ const Slider = () => {
           />
   
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h1>SKILLED & BUSINESS IMMIGRATION</h1>
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
