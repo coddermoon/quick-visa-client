@@ -69,7 +69,7 @@ const AddService = () => {
                   <TextField type="url" placeholder="Enter image url" name='url' label="Image Url" variant="outlined" fullWidth required />
                 </Grid>
                 <Grid item xs={12} sm={6} >
-                  <TextField type="number" placeholder="Enter image url" name='ratings' label="ratings" variant="outlined" fullWidth required />
+                  <TextField type="number"  min="1" max="5" placeholder="Enter image url" name='ratings' label="ratings" variant="outlined" fullWidth required />
                 </Grid>
                
                 <Grid item xs={12}>

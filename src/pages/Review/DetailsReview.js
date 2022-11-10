@@ -30,12 +30,21 @@ const DetailsReview = () => {
 
            <div className='d-flex justify-content-between'>
            <h5>price :{price}$</h5>
-           <h5>Ratings: <StarRatings
-        rating={parseInt(ratings)}
-        starDimension="30px"
-        starSpacing="10px"
-        starRatedColor="orange"
-      /></h5>
+           <h5>Ratings:
+
+{
+  ratings ?
+  <StarRatings
+  rating={parseInt(ratings)}
+  starDimension="30px"
+  starSpacing="10px"
+  starRatedColor="orange"
+/>
+:
+<span className='text-danger ms-3'>no ratings</span>
+}
+
+           </h5>
            </div> 
            <div className="d-flex align-items-center justify-content-center">
         <Button className="my-4 text-center d-block" variant="contained" size="medium">
