@@ -14,9 +14,11 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { NavLink,useLocation,useNavigate } from "react-router-dom";
 import { AuthContext } from "../Assets/contexts/AuthProvider";
+import UseTitle from "../Assets/Hooks/UseTitle";
 import SocialLogin from "./Shared/SocialLogin";
 
 const Register = () => {
+  UseTitle('Sign Up')
   const navigate = useNavigate();
     const location = useLocation();
 

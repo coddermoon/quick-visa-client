@@ -3,8 +3,10 @@ import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Assets/contexts/AuthProvider';
+import UseTitle from '../../Assets/Hooks/UseTitle';
 
 const AddService = () => {
+  UseTitle('Add A service')
 
     const {setLoading}= useContext(AuthContext)
     

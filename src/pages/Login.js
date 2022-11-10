@@ -5,10 +5,12 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { NavLink,useNavigate,useLocation } from 'react-router-dom';
 import { AuthContext } from '../Assets/contexts/AuthProvider';
+import UseTitle from '../Assets/Hooks/UseTitle';
 import SocialLogin from './Shared/SocialLogin';
 
 
 const Login = () => {
+  UseTitle('Login')
   const {loginWithEmail,setLoading}= useContext(AuthContext)
   const navigate = useNavigate();
     const location = useLocation();
@@ -54,7 +56,7 @@ const handleLogin = (e)=>{
            
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Login
           </Typography>
           <Box component="form" onSubmit={handleLogin} noValidate  sx={{ mt: 3 }}>
             <Grid container spacing={2}>
@@ -94,7 +96,7 @@ const handleLogin = (e)=>{
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Login
             </Button>
             <Grid container justifyContent="center">
               <Grid item>

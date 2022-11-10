@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Assets/contexts/AuthProvider";
+import UseTitle from "../../Assets/Hooks/UseTitle";
 import CommentBox from "./CommentBox";
 import ReviewCard from "./ReviewCard";
 
 const Review = ({ id }) => {
+  UseTitle('review')
   const [comment, setComment] = useState([]);
   const { user } = useContext(AuthContext);
 
