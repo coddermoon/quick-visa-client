@@ -17,10 +17,13 @@ const Review = ({ id }) => {
     const ratings = e.target.ratings.value;
     const name = user?.displayName;
     const photo = user?.photoURL;
+    const uid = user?.uid;
+    
 
     const review = {
       commentSingle,
       name,
+      uid,
       id,
       photo,
       ratings
