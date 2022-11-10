@@ -18,8 +18,12 @@ const CommentBox = ({handleComment}) => {
 
 
       <Grid item xs={12}>
+      <Grid item xs={12}>
+                  <TextField className="mb-5" label="Rating" type='number' name='ratings' min='1' max='5'  placeholder="give rating with 1 to 5 star" variant="outlined" fullWidth required />
+                </Grid>
                 <TextField
                   required
+                  multiline rows={4}
                   fullWidth
                   id="text"
                   label="Comment"

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Avatar, Divider, Grid, Paper } from "@mui/material";
+import StarRatings from 'react-star-ratings';
 
 const ReviewCard = ({comment}) => {
  
   
-  const {commentSingle,name,photo}=comment
+  const {commentSingle,name,photo,ratings}=comment
     return (
         <div >
      
@@ -20,6 +21,19 @@ const ReviewCard = ({comment}) => {
             </p>
             <p style={{ textAlign: "left", color: "gray" }}>
               posted 1 minute ago
+            </p>
+            <p style={{ textAlign: "left", color: "gray" }}>
+            {
+  ratings ?
+  <StarRatings
+  rating={parseInt(ratings)}
+  starDimension="30px"
+  starSpacing="10px"
+  starRatedColor="orange"
+/>
+:
+<span className='text-danger ms-3'>no ratings</span>
+}
             </p>
           </Grid>
         </Grid>

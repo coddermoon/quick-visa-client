@@ -12,6 +12,7 @@ const Review = ({ id }) => {
   const handleComment = (e) => {
     e.preventDefault();
     const commentSingle = e.target.comment.value;
+    const ratings = e.target.ratings.value;
     const name = user?.displayName;
     const photo = user?.photoURL;
 
@@ -20,6 +21,7 @@ const Review = ({ id }) => {
       name,
       id,
       photo,
+      ratings
     };
     
 
