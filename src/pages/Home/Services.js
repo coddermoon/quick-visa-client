@@ -2,10 +2,10 @@ import {
   Button,
  
 } from "@mui/material";
-import React, {  useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Assets/contexts/AuthProvider";
+
 
 
 import ServiceCard from "../Shared/ServiceCard";
@@ -14,8 +14,7 @@ import ServiceCard from "../Shared/ServiceCard";
 
 const Services = () => {
 
-   const {setLoading}= useContext(AuthContext)
-
+ 
    
  
 
@@ -29,7 +28,7 @@ const Services = () => {
         .then(data=>{
           
           setServices(data)
-          setLoading(false)
+         
         })
         
     },[])
