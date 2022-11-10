@@ -7,7 +7,7 @@ import ServiceCard from '../Shared/ServiceCard';
 const ServicePage = () => {
     UseTitle('Services')
     const services = useLoaderData()
-    console.log(services)
+   
     return (
         <Container>
            <h1 className="text-center my-5">our cool services</h1>

@@ -10,6 +10,7 @@ import SocialLogin from './Shared/SocialLogin';
 
 
 const Login = () => {
+ 
   UseTitle('Login')
   const {loginWithEmail,setLoading}= useContext(AuthContext)
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Login = () => {
 const handleLogin = (e)=>{
   e.preventDefault()
   const form = e.target
- 
+ setLoading(true)
   const email = form.email.value
   const password = form.password.value
 
