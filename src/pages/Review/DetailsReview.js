@@ -3,11 +3,13 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
+import StarRatings from 'react-star-ratings';
 import Review from './Review';
 
 const DetailsReview = () => {
+  
     const data = useLoaderData()
-   const {title,description,thubm_img,_id}=data
+   const {title,description,thubm_img,_id,price,ratings}=data
     return (
         <Container>
             <Row className='my-5 '>
@@ -27,8 +29,13 @@ const DetailsReview = () => {
            <p>{description}</p>
 
            <div className='d-flex justify-content-between'>
-           <h4>price :</h4>
-           <h4>Ratings :</h4>
+           <h5>price :{price}$</h5>
+           <h5>Ratings: <StarRatings
+        rating={parseInt(ratings)}
+        starDimension="30px"
+        starSpacing="10px"
+        starRatedColor="orange"
+      /></h5>
            </div> 
            <div className="d-flex align-items-center justify-content-center">
         <Button className="my-4 text-center d-block" variant="contained" size="medium">

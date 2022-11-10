@@ -23,7 +23,7 @@ const Review = ({ id }) => {
     };
     
 
-    fetch(`http://localhost:5000/review`, {
+    fetch(`https://service-review-server-woad.vercel.app/review`, {
       method: 'POST',
       headers: {
           'content-type': 'application/json'
@@ -45,7 +45,7 @@ const Review = ({ id }) => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/review?id=${id}`)
+    fetch(`https://service-review-server-woad.vercel.app/review?id=${id}`)
       .then((res) => res.json())
       .then((data) => setComment(data));
       

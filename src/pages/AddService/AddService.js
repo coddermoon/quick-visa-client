@@ -14,12 +14,13 @@ const AddService = () => {
         const form = e.target
         const title= form.title.value
         const price= form.price.value
+        const ratings= form.ratings.value
         const description= form.description.value
         const thubm_img= form.url.value
         
 
         const data = {
-            title,price,description,thubm_img
+            title,price,description,thubm_img,ratings
         }
         setLoading(true)
         fetch(` https://service-review-server-woad.vercel.app/services`, {
@@ -64,8 +65,11 @@ const AddService = () => {
                 <Grid xs={12} sm={6} item>
                   <TextField placeholder="price" label="price" name='price' variant="outlined" fullWidth required />
                 </Grid>
-                <Grid item xs={12}>
-                  <TextField type="text" placeholder="Enter image url" name='url' label="Image Url" variant="outlined" fullWidth required />
+                <Grid item xs={12} sm={6} >
+                  <TextField type="url" placeholder="Enter image url" name='url' label="Image Url" variant="outlined" fullWidth required />
+                </Grid>
+                <Grid item xs={12} sm={6} >
+                  <TextField type="number" placeholder="Enter image url" name='ratings' label="ratings" variant="outlined" fullWidth required />
                 </Grid>
                
                 <Grid item xs={12}>
