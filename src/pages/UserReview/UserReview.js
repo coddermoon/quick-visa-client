@@ -11,7 +11,7 @@ const UserReview = () => {
   const {user}= useContext(AuthContext)
   const uid = user?.uid
 
-  useEffect(()=>()=>{
+  useEffect(()=>{
 fetch(`https://service-review-server-woad.vercel.app/review?uid=${uid}`)
 .then(res=>res.json())
 .then(data=>setMyReview(data))
