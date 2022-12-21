@@ -23,7 +23,9 @@ a{
 .carousel-caption {
   position: absolute;
  
-  top: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: left;
   
 }
 
