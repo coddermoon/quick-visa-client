@@ -30,12 +30,16 @@ a{
 .carousel-inner{
  height: 500px;
 }
+.carousel-item {
+ position: relative !important;
+}
 
-.carosel-item{
-  background-color: rgba(0,0,0,0.7);
-  position: absolute;
+.carosel-item .crimg::before{
+content: '';
+  position: absolute !important;
   top:0;
   left:0;
   width:100%;
+  background: red;
  
 }

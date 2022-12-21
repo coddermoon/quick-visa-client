@@ -6,7 +6,7 @@ const Slider = () => {
     <Carousel fade className="position-relative">
       <Carousel.Item className="h-75">
         <img
-          className="d-block w-100 "
+          className="d-block w-100 crimg "
           src="https://img.freepik.com/free-photo/visa-application-composition-with-canadian-flag_23-2149117799.jpg"
           alt="First slide"
         />
@@ -22,7 +22,7 @@ const Slider = () => {
       </Carousel.Item>
       <Carousel.Item className="h-75">
         <img
-          className="d-block w-100 "
+          className="d-block w-100 crimg"
           src="https://img.freepik.com/free-photo/american-visa-document_1101-820.jpg"
           alt="First slide"
         />
